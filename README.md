@@ -1,9 +1,9 @@
 # DeskGuard – Library Seat Booking & Anti-Hoarding App
 
-## 🎯 Overview
+##  Overview
 DeskGuard solves library desk hoarding by providing a real-time, fair desk booking system with automatic expiration of abandoned desks.
 
-## 📋 What We're Building
+## What We're Building
 
 ### The Problem
 - Students reserve desks with bags and disappear for hours
@@ -14,7 +14,7 @@ DeskGuard solves library desk hoarding by providing a real-time, fair desk booki
 ### The Solution
 **Live Library Map** → **QR Code Check-In** → **Auto-Expiry System** → **Fair Access**
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -54,7 +54,7 @@ DeskGuard solves library desk hoarding by providing a real-time, fair desk booki
          └───────────────────┘
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 deskguard/
@@ -65,7 +65,7 @@ deskguard/
 └── README.md
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js (v16+)
@@ -103,7 +103,7 @@ deskguard/
    - Student Portal: http://localhost:3000
    - Librarian Dashboard: http://localhost:3000/admin
 
-## 🔑 Key Concepts Explained
+##  Key Concepts Explained
 
 ### 1. **Server-Side Timers (Why this matters)**
 - Browser timers can be manipulated by users
@@ -132,7 +132,7 @@ OR Student clicks "Away" (starts 20-min away timer)
 [After 20 minutes] → Desk auto-abandoned if no activity
 ```
 
-## 📚 Documentation
+##  Documentation
 
 - [Backend Setup Guide](./backend/README.md)
 - [Frontend Setup Guide](./frontend/README.md)
@@ -151,7 +151,7 @@ OR Student clicks "Away" (starts 20-min away timer)
 | Real-time | Socket.io | Live map updates |
 | Map | SVG + React | Scalable, interactive graphics |
 
-## 📊 Database Tables Preview
+## Database Tables Preview
 
 ```sql
 -- Desks in the library
@@ -185,7 +185,7 @@ CREATE TABLE timers (
 );
 ```
 
-## 🎨 Frontend Pages
+##  Frontend Pages
 
 1. **Student Portal** (`/`)
    - Interactive library map (SVG)
@@ -199,7 +199,7 @@ CREATE TABLE timers (
    - Manual reset controls
    - Statistics
 
-## ⚙️ Background Job (The Magic)
+## Background Job 
 
 **Every 60 seconds:**
 ```
@@ -212,7 +212,7 @@ CREATE TABLE timers (
 7. Broadcast updates via WebSocket to all connected clients
 ```
 
-## 🔐 Security Considerations
+##  Security Considerations
 
 - ✅ Server validates all timer expirations
 - ✅ Students can't manipulate their timers via browser
@@ -220,14 +220,14 @@ CREATE TABLE timers (
 - ✅ Librarian actions are logged
 - ✅ Authentication middleware on all endpoints
 
-## 📈 Performance Notes
+##  Performance Notes
 
 - Redis stores active timers (sub-millisecond lookups)
 - PostgreSQL stores permanent history
 - WebSocket broadcasts reduce polling overhead
 - SVG map renders efficiently even with 100+ desks
 
-## 🐛 Testing
+##  Testing
 
 ```bash
 # Backend tests
@@ -237,6 +237,6 @@ cd backend && npm test
 cd frontend && npm test
 ```
 
-## 📞 Support
+##  Support
 
 For issues and questions, open an issue on GitHub.
